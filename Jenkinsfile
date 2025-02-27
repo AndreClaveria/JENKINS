@@ -10,13 +10,17 @@ pipeline {
             steps {
                 echo 'Installing Node.js dependencies...'
                 sh 'npm install'
+                sh 'npm install -g mocha || true'
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running unit tests...'
-                sh 'npm test'
+             
+                sh 'chmod +x node_modules/.bin/mocha || true'
+             
+                sh 'node ./node_modules/mocha/bin/mocha.js test.js'
             }
         }
 
