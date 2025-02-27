@@ -29,8 +29,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
-                // Ici, vous pouvez ajouter un script de déploiement personnalisé
+                echo 'Deploying application....'
+             
             }
         }
     }
